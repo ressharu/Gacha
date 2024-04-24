@@ -6,12 +6,12 @@ const app = new Hono()
 let db = 0;
 
 app.get('/', (c) => {
-  return c.text(`now count: ${db}`)
+  return c.html(<div>count: {db}</div>)
 })
 
 app.get('/api', (c) => {
-  db++;
-  return c.text('');
+  db++
+  return c.text('')
 })
 
 const port = 3000
